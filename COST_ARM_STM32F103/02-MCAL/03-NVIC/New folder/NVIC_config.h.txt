@@ -1,0 +1,23 @@
+/**********************************************************************/
+/*  name       : Ahmed elshehry                                       */
+/*  SW         :  NVIC                                                    */
+/*  version    :  V01                                                 */
+/*  DATA       : 16/1/2022                                            */
+/**************************************************************************/
+
+#ifndef   NVIC_CONFIG_H 
+#define   NVIC_CONFIG_H
+/*number of GROUP PRIORITY  AND SUB PRIORITY 
+ optain that :1- GROUP15_SUB0         1-  GROUP = 15    , SUB = 0           
+              2- GROUP9_SUB2          2-  GROUP = 9     , SUB = 2           
+              3- GROUP4_SUB4          3-  GROUP = 4     , SUB = 4           
+              4- GROUP2_SUB9          4-  GROUP = 2     , SUB = 9             
+              5- GROUP0_SUB15         5-  GROUP = 0     , SUB = 15   */       
+
+#define    NUMBER_OF_GROUP_SUB      GROUP4_SUB4  
+
+
+
+
+
+#endif 

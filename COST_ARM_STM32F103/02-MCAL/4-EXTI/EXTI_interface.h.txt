@@ -1,0 +1,27 @@
+/**********************************************************************/
+/*  name       : Ahmed elshehry                                       */
+/*  SW         :  EXTI                                                  */
+/*  version    :  V01                                                 */
+/*  DATA       : 19/1/2022                                            */
+/**************************************************************************/
+
+#ifndef   EXTI_INTERFACE_H 
+#define   EXTI_INTERFACE_H
+
+// the funcation to inital the interrupt 
+void EXTI_voidInit(void);
+
+// enable line to recived interrupt                    
+void EXTI_voidEnableInterrupt (u8 capy_u8LineExti);
+
+// Disable line to recived interrupt
+void EXTI_voidDisableInterrupt(u8 capy_u8LineExti);
+
+// THE funcation to enable the soft ware interrupt 
+void EXTI_voidSwInterrupt(u8 capy_u8LineExti);
+
+//the funcation to slecet line and mode 
+void EXTI_voidSetSignalLatch(u8 capy_u8LineExti,u8 capy_u8Mode);
+
+
+#endif 

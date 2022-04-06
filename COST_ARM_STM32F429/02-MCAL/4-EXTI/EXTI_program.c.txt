@@ -1,0 +1,74 @@
+/**********************************************************************/
+/*  name       : Ahmed elshehry                                       */
+/*  SW         :  EXTI                                                  */
+/*  version    :  V01                                                 */
+/*  DATA       : 19/1/2022                                            */
+/**************************************************************************/
+
+//include lib 
+#include "STD_TYPES.h"
+#include "BET_MATH.h"
+
+//iclude drive 
+#include "EXTI_interface.h"
+#include "EXTI_config.h"
+#include "EXTI_private.h"
+
+// the funcation to inital the interrupt 
+void EXTI_voidInit(void)
+{
+	#if   LINE_MODE == RISING_EDGE
+	SET_BIT(EXTI->EXTI_IMR,LINE_ID);
+	SET_BIT(EXTI->EXTI_RTSR,LINE_ID);
+	
+	#elif LINE_MODE == FALLING_EDGE
+	SET_BIT(EXTI->EXTI_IMR,LINE_ID);
+	SET_BIT(EXTI->EXTI_FTSR,LINE_ID);
+	
+	#elif LINE_MODE == ON_CHANGE
+	SET_BIT(EXTI->EXTI_IMR,LINE_ID);
+	SET_BIT(EXTI->EXTI_RTSR,LINE_ID);
+	SET_BIT(EXTI->EXTI_FTSR,LINE_ID);
+	
+	#else
+	    #error ("worng mode or choice line  ")
+	
+	#endif 
+}  
+                       
+// enable line to recived interrupt                    
+void EXTI_voidEnableInterrupt (u8 capy_u8LineExti)
+{
+		SET_BIT(EXTI->EXTI_IMR, capy_u8LineExti);
+}
+// Disable line to recived interrupt
+void EXTI_voidDisableInterrupt(u8 capy_u8LineExti)
+{
+		CLR_BIT(EXTI->EXTI_IMR,capy_u8LineExti);
+}
+// THE funcation to enable the soft ware interrupt 
+void EXTI_voidSwInterrupt(u8 capy_u8LineExti)
+{
+	SET_BIT(EXTI->EXTI_SWIER, capy_u8LineExti);
+}
+//the funcation to slecet line and mode 
+void EXTI_voidSetSignalLatch(u8 capy_u8LineExti,u8 capy_u8Mode)
+{
+	if(capy_u8LineExti<=LINE_15)
+	{
+		SET_BIT(EXTI->EXTI_IMR, capy_u8LineExti);
+		switch(capy_u8Mode)
+		{
+			case  RISING_EDGE:  SET_BIT(EXTI->EXTI_RTSR,capy_u8Mode);     break;
+			case FALLING_EDGE:  SET_BIT(EXTI->EXTI_FTSR,capy_u8Mode);     break;
+			case   ON_CHANGE :  SET_BIT(EXTI->EXTI_RTSR,capy_u8Mode);                                              
+		                        SET_BIT(EXTI->EXTI_FTSR,capy_u8Mode);     break;
+			default : /*/return error ;	*/				                  break;
+		}  
+	
+		 
+		    
+	}
+    else {//return error }
+
+}

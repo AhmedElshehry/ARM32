@@ -1,0 +1,28 @@
+//proto type of function dealy
+
+void dealy_ms(u16 numOfSec)
+{
+	/* the delay itself runs with milli seconds
+	   so here we multiply the seconds by 1000.  */
+	int numOfMilliSec = 1000 * numOfSec;
+	
+	/* Making the time pass with nothing running
+	   until the time is up.                     */
+	time_t startTime = clock();
+	while(clock() < startTime + numOfMilliSec);
+}
+//proto type of function dealy
+void dealy_ms(u16 value_of_dealy)
+{
+u16 countet_1=0,countet_2=0;
+for(countet_1;countet_1<=value_of_dealy; countet_1++)
+{
+for(countet_2;countet_2<(12000/4); countet_2++)
+{
+ass('nop')
+}
+}
+
+
+
+}

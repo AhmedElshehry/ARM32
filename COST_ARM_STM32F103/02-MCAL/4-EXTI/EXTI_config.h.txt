@@ -1,0 +1,28 @@
+/**********************************************************************/
+/*  name       : Ahmed elshehry                                       */
+/*  SW         :  EXTI                                                  */
+/*  version    :  V01                                                 */
+/*  DATA       : 19/1/2022                                            */
+/**************************************************************************/
+
+#ifndef   EXTI_CONFIG_H 
+#define   EXTI_CONFIG_H
+
+/*CHOISE LINE_ID   TO ACTIVE INTERRUPT LINE  0 ===>15        */
+// the line id indcation number of bit to external interrupt 
+
+#define        LINE_ID          LINE_4
+
+
+/* CHOISE configration the mode 3 options 1-RISING_EDGE
+                                          2-FALLING_EDGE
+								          3-ON_CHANGE       */ 
+
+
+#define    LINE_MODE      RISING_EDGE
+
+
+
+
+
+#endif 

@@ -1,0 +1,25 @@
+/**********************************************************************/
+/*  name       : Ahmed elshehry                                       */
+/*  SW         :  NVIC                                                    */
+/*  version    :  V01                                                 */
+/*  DATA       : 16/1/2022                                            */
+/**************************************************************************/
+
+#ifndef NVIC_INTERFACE_H 
+#define NVIC_INTERFACE_H
+// the funcation to enable  interrupt peripreal at NVIC
+ void MNVIC_voidEnableInterrupt    (u8 capy_u8IntNumber);
+ // the funcation to Disable   interrupt peripreal at NVIC
+ void MNVIC_voidDisableInterrupt   (u8 capy_u8IntNumber);
+ // the funcation to enable  pending flag  peripreal at NVIC
+ void MNVIC_voidSetPendingFalg     (u8 capy_u8IntNumber);
+ // the funcation to disable  pending flag  peripreal at NVIC
+ void MNVIC_voidClearPendingFalg   (u8 capy_u8IntNumber);
+ // the funcation to read  active flag  peripreal at NVIC to cheek the interrupt in running out 
+ u8   MNVIC_u8GetActiveFalg        (u8 capy_u8IntNumber);
+ 
+ //the fucation to set priorty group and sub priority 
+ void MNVIC_voidSetPrioirty(u8 capy_u8IntID ,u8 capy_u8GroupPirorty,u8 capy_u8SubPirorty ); 
+ 
+ 
+#endif 
